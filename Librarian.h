@@ -3,7 +3,10 @@
 
 #include "Person.h"
 #include "Member.h"
+#include "Book.h"
+#include "Additional_Functions.h"
 #include "SharedData.h"
+#include "ReadCSV.h"
 
 class Librarian : public Person{
 private:
