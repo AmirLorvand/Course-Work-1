@@ -1,7 +1,7 @@
 #include "Member.h"
 #include "Book.h"
 
-Member::Member(int memberId, string name, string address, string email){
+Member::Member(int memberId, std::string name, std::string address, std::string email){
     this -> memberId = memberId;
     this -> setName(name);
     this -> setAddress(address);
@@ -12,7 +12,7 @@ int Member::getMemberId(){
     return this -> memberId;
 }
 
-vector<Book> Member::getBookBorrowed(){
+std::vector<Book> Member::getBookBorrowed(){
     return this -> bookLoaned;
 }
 

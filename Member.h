@@ -11,12 +11,12 @@ class Book;
 class Member: public Person{
 private:
     int memberId;
-    vector<Book> bookLoaned;
+    std::vector<Book> bookLoaned;
 
 public:
-    Member(int memberId, string name, string address, string email);
+    Member(int memberId, std::string name, std::string address, std::string email);
     int getMemberId();
-    vector<Book> getBookBorrowed();
+    std::vector<Book> getBookBorrowed();
     void setBookBorrowed(Book book);
 
 };

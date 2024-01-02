@@ -1,6 +1,6 @@
 #include "Book.h"
 
-Book::Book(int bookId, string bookName, string authorFirstName, string authorLastName) {
+Book::Book(int bookId, std::string bookName, std::string authorFirstName, std::string authorLastName) {
     this->bookId = bookId;
     this->bookName = bookName;
     this->authorFirstName = authorFirstName;
@@ -11,15 +11,15 @@ int Book::getbookId(){
     return this->bookId;
 }
 
-string Book::getbookName(){
+std::string Book::getbookName(){
     return this->bookName;
 };
 
-string Book::getAuthorFirstName(){
+std::string Book::getAuthorFirstName(){
     return this->getAuthorFirstName();
 }
 
-string Book::getAuthorLastName(){
+std::string Book::getAuthorLastName(){
     return this->authorLastName;
 }
 

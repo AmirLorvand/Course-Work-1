@@ -7,20 +7,20 @@
 class Book{
 private:
     int bookId;
-    string bookName;
-    string authorFirstName;
-    string authorLastName;
-    string bookType;
+    std::string bookName;
+    std::string authorFirstName;
+    std::string authorLastName;
+    std::string bookType;
     time_t dueDate;
     Member* borrower;
 
    
 public:
-    Book(int bookId, string bookName, string authorFirstName, string authorLastName);
+    Book(int bookId, std::string bookName, std::string authorFirstName, std::string authorLastName);
     int getbookId();
-    string getbookName();
-    string getAuthorFirstName();
-    string getAuthorLastName();
+    std::string getbookName();
+    std::string getAuthorFirstName();
+    std::string getAuthorLastName();
     time_t getDueDate();
     void setDueDate(time_t Date);
     void returnBook();

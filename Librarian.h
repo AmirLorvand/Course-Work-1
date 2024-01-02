@@ -11,7 +11,7 @@ private:
     int salary;
 
 public:
-    Librarian(int staffId, string name, string address, string email, int salary);
+    Librarian(int staffId, std::string name, std::string address, std::string email, int salary);
     void addMember();
     void issueBook(int memberId, int bookId);
     void returnBook(int memberId, int bookId);

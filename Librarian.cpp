@@ -1,6 +1,6 @@
 #include "Librarian.h"
 
-Librarian::Librarian(int staffId, string name, string address, string email, int salary){
+Librarian::Librarian(int staffId, std::string name, std::string address, std::string email, int salary){
     this -> staffId = staffId;
     this -> setName(name);
     this -> setAddress(address);
@@ -10,24 +10,24 @@ Librarian::Librarian(int staffId, string name, string address, string email, int
 
 
 void Librarian::addMember(){
-    string name;
-    string address;
-    string email;
+    std::string name;
+    std::string address;
+    std::string email;
     int ID;
-    cout << "name";
-    getline(cin, name);
-    cout << "address";
-    getline(cin, address);
-    cout << "email";
-    getline(cin, email);
-    cout << "id:";
+    std::cout << "name";
+    std::getline(std::cin, name);
+    std::cout << "address";
+    std::getline(std::cin, address);
+    std::cout << "email";
+    std::getline(std::cin, email);
+    std::cout << "id:";
     ID = SharedData::GetMaxId();
 
     Member newMember(ID, name, address, email);
     SharedData::Members.push_back(newMember);
 
     for (Member mem : SharedData::Members){
-        cout << mem.getMemberId() << " " << mem.getName() << endl;
+        std::cout << mem.getMemberId() << " " << mem.getName() << std::endl;
     }
 
 }

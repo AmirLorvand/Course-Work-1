@@ -4,24 +4,23 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
 
 class Person{
 private:
-    string name;
-    string address;
-    string email;
+    std::string name;
+    std::string address;
+    std::string email;
 
 public:
-    string getName();
-    void setName(string Name);
+    std::string getName();
+    void setName(std::string Name);
 
-    string getAddress();
-    void setAddress(string Address);
+    std::string getAddress();
+    void setAddress(std::string Address);
 
-    string getEmail();
-    void setEmail(string Email);
+    std::string getEmail();
+    void setEmail(std::string Email);
     
 };
 
-#endifs
+#endif
