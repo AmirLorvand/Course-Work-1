@@ -1,7 +1,4 @@
 #include "Librarian.h"
-#include "Member.h"
-
-static vector<Member> Members;
 
 Librarian::Librarian(int staffId, string name, string address, string email, int salary){
     this -> staffId = staffId;
@@ -24,13 +21,12 @@ void Librarian::addMember(){
     cout << "email";
     getline(cin, email);
     cout << "id:";
-    cin >> ID;
-    getchar();
+    ID = SharedData::GetMaxId();
 
     Member newMember(ID, name, address, email);
-    Members.push_back(newMember);
+    SharedData::Members.push_back(newMember);
 
-    for (Member mem : Members){
+    for (Member mem : SharedData::Members){
         cout << mem.getMemberId() << " " << mem.getName() << endl;
     }
 

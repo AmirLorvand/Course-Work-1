@@ -2,7 +2,8 @@
 #define UNTITLED1_LIBRARIAN_H
 
 #include "Person.h"
-
+#include "Member.h"
+#include "SharedData.h"
 
 class Librarian : public Person{
 private:
