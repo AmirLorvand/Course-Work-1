@@ -124,10 +124,56 @@ void Librarian::displayBorrowedBooks(int memberId) {
         }
     }
 }
-void Librarian::calcFine(int memberId);
 
-int Librarian::getstaffId();
-void Librarian::setstaffId(int staffId);
+/*
+    to calculate the fine if a book is overdue
+    @memberId the ID of the member
+*/
+void Librarian::calcFine(int memberId) {
+    int Fine = 0;
+    for (Member member: SharedData::Members) {
+        if (member.getMemberId() == memberId) {
 
-int Librarian::getSalary();
-void Librarian::setSalary(int salary);
+            for (Book member_book: member.getBookBorrowed()) {
+                time_t due = member_book.getDueDate();
+                std::cout << "Due date of book " << member_book.getbookName() << " is : " << ctime(&due) << std::endl;
+                Fine += int(time(0) - member_book.getDueDate()) / SEC_IN_DAY;
+            }
+
+            std::cout << "calculated fine = " << Fine << std::endl;
+
+        }
+    }
+}
+
+/*
+    staffId getter
+    @return staff ID
+*/
+int Librarian::getstaffId() {
+    return this->getstaffId();
+}
+
+/*
+    staffId setter
+    @staffId the ID of the staff
+*/
+void Librarian::setstaffId(int staffId) {
+    this->staffId = staffId;
+}
+
+/*
+    salary getter
+    @return salary
+*/
+int Librarian::getSalary() {
+    return this->salary;
+}
+
+/*
+    salary setter
+    @salary the salary of the staff
+*/
+void Librarian::setSalary(int salary) {
+    this->salary = salary;
+}
