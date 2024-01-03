@@ -62,7 +62,7 @@ void Librarian::addMember(){
    @bookId the ID of the book
    @memberId the ID of the member 
 */
-void issueBook(int memberId, int bookId) {
+void Librarian::issueBook(int memberId, int bookId) {
     for (Member &member: SharedData::Members) {
         if (member.getMemberId() == memberId) {
             BookStruct Book_searched;
@@ -96,7 +96,7 @@ void issueBook(int memberId, int bookId) {
     @memberId ID of the member
     @bookId ID of the book
 */
-void returnBook(int memberId, int bookId) {
+void Librarian::returnBook(int memberId, int bookId) {
     
     for (Member mem: SharedData::Members) {
         if (mem.getMemberId() == memberId) {
@@ -109,11 +109,25 @@ void returnBook(int memberId, int bookId) {
         }
     }
 }
-void displayBorrowedBooks(int memberId);
-void calcFine(int memberId);
+/*
+    to display borrowed books by a member
+    @mebmerId ID of the member
+*/
+void Librarian::displayBorrowedBooks(int memberId) {
+    for (Member member: SharedData::Members) {
+        if (member.getMemberId() == memberId) {
 
-int getstaffId();
-void setstaffId(int staffId);
+            for (Book member_book: member.getBookBorrowed()) {
+                time_t duo = member_book.getDueDate();
+                std::cout << member_book.getbookId() << " , " << member_book.getbookName() << " , " << ctime(&duo) << std::endl;
+            }
+        }
+    }
+}
+void Librarian::calcFine(int memberId);
 
-int getSalary();
-void setSalary(int salary);
+int Librarian::getstaffId();
+void Librarian::setstaffId(int staffId);
+
+int Librarian::getSalary();
+void Librarian::setSalary(int salary);
