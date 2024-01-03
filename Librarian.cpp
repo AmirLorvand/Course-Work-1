@@ -90,7 +90,25 @@ void issueBook(int memberId, int bookId) {
         }
     }
 }
-void returnBook(int memberId, int bookId);
+
+/*
+    to return a book to the library
+    @memberId ID of the member
+    @bookId ID of the book
+*/
+void returnBook(int memberId, int bookId) {
+    
+    for (Member mem: SharedData::Members) {
+        if (mem.getMemberId() == memberId) {
+            for (Book member_book: mem.getBookBorrowed()) {
+                if (member_book.getbookId() == bookId) {
+                    member_book.returnBook();
+                    std::cout << "found book";
+                }
+            }
+        }
+    }
+}
 void displayBorrowedBooks(int memberId);
 void calcFine(int memberId);
 
