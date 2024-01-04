@@ -1,8 +1,16 @@
+/*
+    ReadCSV.cpp
+    Author: M00872834
+    Created: 3 Jan 2024
+    Updated: 4 Jan 2024
+*/
+
 #include "ReadCSV.h"
 
 /*
  * to read list of the books from CSV file
  */
+ 
 std::vector<BookStruct> GetAllBooks(std::string fileName){
     std::vector<BookStruct> allBooks;
     BookStruct Book;

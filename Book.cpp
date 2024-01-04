@@ -1,3 +1,10 @@
+/*
+    Book.cpp
+    Author: M00872834
+    Created: 2 Jan 2024
+    Updated: 4 Jan 2024
+*/
+
 #include "Book.h"
 
 Book::Book(int bookId, std::string bookName, std::string authorFirstName, std::string authorLastName) {

@@ -1,3 +1,10 @@
+/*
+    Person.h
+    Author: M00872834
+    Created: 30 Dec 2023
+    Updated: 4 Jan 2024
+*/
+
 #include <iostream>
 #include "Person.h"
 

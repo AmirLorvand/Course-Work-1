@@ -1,3 +1,10 @@
+/*
+    Librarian.cpp
+    Author: M00872834
+    Created: 30 Dec 2023
+    Updated: 4 Jan 2024
+*/
+
 #include "Librarian.h"
 
 // number of seconds in a day (24 hour)
@@ -6,6 +13,7 @@
 /*
  * constructor of class Librarian
  */
+ 
 Librarian::Librarian(int staffId, std::string name, std::string address, std::string email, int salary){
     this -> staffId = staffId;
     this -> setName(name);

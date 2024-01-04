@@ -1,9 +1,15 @@
 #ifndef PERSON_H
 #define PERSON_H
 
+/*
+    Person.h
+    Author: M00872834
+    Created: 30 Dec 2023
+    Updated: 4 Jan 2024
+*/
+
 #include <iostream>
 #include <string>
-
 
 class Person{
 private:

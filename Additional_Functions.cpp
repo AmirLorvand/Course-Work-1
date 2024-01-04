@@ -1,3 +1,10 @@
+/*
+    Additional_Functions.cpp
+    Author: M00872834
+    Created: 3 Jan 2024
+    Updated: 4 Jan 2024
+*/
+
 #include "Additional_Functions.h"
 
 namespace InputValidation {

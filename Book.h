@@ -1,6 +1,13 @@
 #ifndef BOOK_H
 #define BOOK_H
 
+/*
+    Book.h
+    Author: M00872834
+    Created: 1 Jan 2024
+    Updated: 4 Jan 2024
+*/
+
 #include <ctime>
 #include "Member.h"
 

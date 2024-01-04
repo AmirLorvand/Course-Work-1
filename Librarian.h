@@ -1,6 +1,13 @@
 #ifndef UNTITLED1_LIBRARIAN_H
 #define UNTITLED1_LIBRARIAN_H
 
+/*
+    Librarian.h
+    Author: M00872834
+    Created: 30 Dec 2023
+    Updated: 4 Jan 2024
+*/
+
 #include "Person.h"
 #include "Member.h"
 #include "Book.h"
