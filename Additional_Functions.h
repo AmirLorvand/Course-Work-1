@@ -10,7 +10,9 @@
 
 #include <iostream>
 #include <string>
-
+#include "Book.h"
+#include "SharedData.h"
+#include "ReadCSV.h"
 /*
  * this namespace is for checking and validating user input for each input.
  */
@@ -21,7 +23,15 @@ namespace InputValidation{
     extern bool EmailValidate(std::string email);
     extern bool NameValidate(std::string name);
     extern bool ValidateYesNo(std::string UserInput);
+    extern int ShowMenu(std::vector<std::string> Menu);
+    extern int getInputNum();
 
+}
+
+namespace BookFunctions{
+    extern void showBook(Book book);
+    extern void showBook(std::vector<Book> books);
+    extern void setFilePath();
 }
 
 #endif
