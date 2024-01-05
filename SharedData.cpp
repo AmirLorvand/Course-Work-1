@@ -9,8 +9,7 @@
 
 namespace SharedData{
     std::vector<Member> Members;
-    std::vector<Book> Books;
-    std::string FilePath;
+    std::string FilePath = "/Users/amir/Desktop/Course Work 1/library_books.csv";
 
     int GetMaxId(){
         int maxid = 0;
