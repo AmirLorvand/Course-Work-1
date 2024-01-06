@@ -74,29 +74,50 @@ void Librarian::issueBook(int memberId, int bookId) {
     for (Member &member: SharedData::Members) {
         if (member.getMemberId() == memberId) {
             BookStruct Book_searched;
-            FindRecord(Book_searched, SharedData::FilePath, std::to_string(bookId));
-            // create book for
 
-            std::cout << Book_searched.bookName << Book_searched.bookId;
+            bool isFound = FindRecord(Book_searched, SharedData::FilePath, std::to_string(bookId));
+
+            if(!isFound){
+                std::cout << "Book not found please try again" << std::endl;
+                return;
+            }
 
             Book foundBook(stoi(Book_searched.bookId), Book_searched.bookName, Book_searched.authorFirstName,
                            Book_searched.authorLastName);
 
-            std::cout << "give num of day: ";
-            int day = 3;
-            std::cin >> day;
+            std::cout << "Is this the Book that you want to assign to user " << member.getName() << " :(yes/no)" << std::endl;
+            BookFunctions::showBook(foundBook);
 
-            time_t now = time(0);
+            std::string UserInput;
+            getline(std::cin, UserInput);
 
-            foundBook.borrowBook(&member, now + (day * SEC_IN_DAY));
+            if(!InputValidation::ValidateYesNo(UserInput)){
+                std::cout << "Cancel Request" << std::endl;
+                return;
+            }
+
+            std::cout << "give number of day for dueDate: ";
+            int day = InputValidation::getInputNum();
+
+            if(day < 0){
+                return;
+            }
+
+            time_t DueDate = time(0) + (day * SEC_IN_DAY);
+
+            foundBook.borrowBook(&member, DueDate );
 
             member.setBookBorrowed(foundBook);
 
-            std::cout << "Done";
+
+            std::cout << "Book has been assigned to user " << member.getName() << " :" << std::endl ;
+            BookFunctions::showBook(foundBook);
 
             return;
         }
     }
+    std::cout << "No member found" << std::endl;
+    return;
 }
 
 /*
@@ -110,13 +131,36 @@ void Librarian::returnBook(int memberId, int bookId) {
         if (mem.getMemberId() == memberId) {
             for (Book member_book: mem.getBookBorrowed()) {
                 if (member_book.getbookId() == bookId) {
-                    member_book.returnBook();
-                    std::cout << "found book";
+
+                    time_t current_time = time(0);
+                    time_t BookDueDate = member_book.getDueDate();
+
+                    std::cout << "found book " << member_book.getbookName() << " in member books. DueDate: " <<
+                        ctime(&BookDueDate) << " current Date: " << ctime(&current_time) << std::endl <<
+                        "would you like to pay your Fine? (yes/no) :";
+
+//                    member_book.returnBook();
+
+                    std::string UserInput;
+                    getline(std::cin, UserInput);
+
+                    if(InputValidation::ValidateYesNo(UserInput)) {
+                        calcFine(memberId);
+                    }
+
+                    std::cout << "Book " << member_book.getbookName() << " has been return." << std::endl;
+
+                    return;
                 }
             }
+            std::cout << "Book not found in member list.";
+            return;
         }
     }
+    std::cout << "No member found" << std::endl;
+    return;
 }
+
 /*
     to display borrowed books by a member
     @mebmerId ID of the member
