@@ -169,10 +169,12 @@ void Librarian::displayBorrowedBooks(int memberId) {
     for (Member member: SharedData::Members) {
         if (member.getMemberId() == memberId) {
 
-            for (Book member_book: member.getBookBorrowed()) {
-                time_t duo = member_book.getDueDate();
-                std::cout << member_book.getbookId() << " , " << member_book.getbookName() << " , " << ctime(&duo) << std::endl;
+            if(member.getBookBorrowed().size() == 0){
+                std::cout << "User " << member.getName() << " has no book borrowed yet." << std::endl;
+                return;
             }
+
+            BookFunctions::showBook(member.getBookBorrowed());
         }
     }
 }
@@ -183,16 +185,22 @@ void Librarian::displayBorrowedBooks(int memberId) {
 */
 void Librarian::calcFine(int memberId) {
     int Fine = 0;
+    time_t now = time(0);
+
     for (Member member: SharedData::Members) {
         if (member.getMemberId() == memberId) {
 
             for (Book member_book: member.getBookBorrowed()) {
-                time_t due = member_book.getDueDate();
-                std::cout << "Due date of book " << member_book.getbookName() << " is : " << ctime(&due) << std::endl;
-                Fine += int(time(0) - member_book.getDueDate()) / SEC_IN_DAY;
+
+                BookFunctions::showBook(member_book);
+
+                int CalFine = int(now - member_book.getDueDate()) / SEC_IN_DAY;
+
+                if(CalFine > 0)
+                    Fine += CalFine;
             }
 
-            std::cout << "calculated fine = " << Fine << std::endl;
+            std::cout << "calculated fine for user " << member.getName() << " is :" << Fine << std::endl;
 
         }
     }
