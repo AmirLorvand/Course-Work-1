@@ -96,8 +96,8 @@ void Librarian::issueBook(int memberId, int bookId) {
                 return;
             }
 
-            std::cout << "give number of day for dueDate: ";
-            int day = InputValidation::getInputNum();
+            //std::cout << "give number of day for dueDate: ";
+            int day = 3; // InputValidation::getInputNum();
 
             if(day < 0){
                 return;
