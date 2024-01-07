@@ -6,6 +6,9 @@ main: main.o Librarian.o Member.o Person.o Book.o SharedData.o Additional_Functi
 Librarian.o: Librarian.cpp
 	g++ $(CXXFLAGS) -c Librarian.cpp
 
+Book.o: Book.cpp
+	g++ $(CXXFLAGS) -c Book.cpp
+
 Member.o: Member.cpp
 	g++ $(CXXFLAGS) -c Member.cpp
 

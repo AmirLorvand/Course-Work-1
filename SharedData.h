@@ -10,6 +10,7 @@
 
 #include <vector>
 #include "Member.h"
+#include "Book.h"
 
 namespace SharedData{
     extern std::vector<Member> Members;

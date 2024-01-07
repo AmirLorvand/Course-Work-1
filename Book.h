@@ -18,7 +18,7 @@ private:
     std::string authorFirstName;
     std::string authorLastName;
     std::string bookType;
-    time_t dueDate;
+    time_t dueDate = 0;
     Member* borrower;
 
    
