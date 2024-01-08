@@ -24,5 +24,11 @@ Additional_Functions.o: Additional_Functions.cpp
 ReadCSV.o: ReadCSV.cpp
 	g++ $(CXXFLAGS) -c ReadCSV.cpp
 
+test: Test.o Librarian.o Member.o Person.o Book.o SharedData.o Additional_Functions.o ReadCSV.o
+	g++ $(CXXFLAGS) Test.o Librarian.o Member.o Person.o Book.o SharedData.o Additional_Functions.o ReadCSV.o -o test
+
+Test.o: Test.cpp
+	g++ $(CXXFLAGS) -c Test.cpp
+
 clean:
-	rm *.o main
+	rm *.o main test
