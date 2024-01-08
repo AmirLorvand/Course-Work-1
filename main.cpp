@@ -6,7 +6,7 @@ int main() {
 
     Librarian Admin(101, "Amir", "SW1", "Amir@gmail.com", 2200);
 
-    std::cout << "Welcom " << Admin.getName() << std::endl;
+    std::cout << "Welcome " << Admin.getName() << std::endl;
 
     std::vector<std::string> Commands = {"AddMember", "Issue a book to a member", "Return a book from a member",
                                          "Display the borrowed books of a member", "Calculate fine for a member",
@@ -26,7 +26,7 @@ int main() {
                 int MemberId = InputValidation::getInputNum();
 
                 if (MemberId != -1) {
-                    std::cout << "Please enter the ID of desire Book: ";
+                    std::cout << "Please enter the ID of that book choose by member: ";
                     int BookId = InputValidation::getInputNum();
 
                     if (BookId != -1) {
@@ -37,11 +37,11 @@ int main() {
             }
 
             case 2: { // return book
-                std::cout << "Please enter the id of Member: ";
+                std::cout << "Please enter the ID of member: ";
                 int MemberId = InputValidation::getInputNum();
 
                 if (MemberId != -1) {
-                    std::cout << "Please enter the id of desire Book: ";
+                    std::cout << "Please enter the ID of the choosen Book: ";
                     int BookId = InputValidation::getInputNum();
 
                     if (BookId != -1) {
@@ -52,7 +52,7 @@ int main() {
             }
 
             case 3: { // display borrowed books
-                std::cout << "Please enter the id of Member: ";
+                std::cout << "Please enter the ID of member: ";
                 int MemberId = InputValidation::getInputNum();
 
                 if(MemberId != -1){
@@ -62,7 +62,7 @@ int main() {
             }
 
             case 4:{ // calculate fine
-                std::cout << "Please enter the id of Member: ";
+                std::cout << "Please enter the ID of member: ";
                 int MemberId = InputValidation::getInputNum();
 
                 if(MemberId != -1){

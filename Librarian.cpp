@@ -30,16 +30,16 @@ void Librarian::addMember(){
     std::string address;
     std::string email;
 
-    std::cout << "enter new member fullname : ";
+    std::cout << "Enter new member fullname : ";
     getline(std::cin, name);
 
     if(!InputValidation::NameValidate(name))
         return;
 
-    std::cout << "enter new member address : ";
+    std::cout << "Enter new member address : ";
     getline(std::cin, address);
 
-    std::cout << "enter new member email address : ";
+    std::cout << "Enter new member email address : ";
     getline(std::cin, email);
 
     if(!InputValidation::EmailValidate(email))
@@ -47,13 +47,13 @@ void Librarian::addMember(){
 
     int ID = SharedData::GetMaxId() + 1;
 
-    std::cout <<"Do you want to add User " << name << " With Id of " << ID << " ? (yes or no)" << std::endl;
+    std::cout <<"Do you want to add User " << name << " with ID " << ID << " ? (yes or no)" << std::endl;
 
     std::string UserInput;
     getline(std::cin, UserInput);
 
     if(!InputValidation::ValidateYesNo(UserInput)){
-        std::cout << "cancel Request" << std::endl;
+        std::cout << "Cancel request" << std::endl;
         return;
     }
 
@@ -61,7 +61,7 @@ void Librarian::addMember(){
     SharedData::Members.push_back(newMember);
 
 
-    std::cout << "User " << name << " With Id of " << ID << " has Been added." << std::endl;
+    std::cout << "User " << name << " with ID of " << ID << " has been added." << std::endl;
 
 }
 
@@ -87,6 +87,8 @@ void Librarian::issueBook(int memberId, int bookId) {
 
             std::cout << "Is this the Book that you want to assign to user " << member.getName() << " :(yes/no)" << std::endl;
             BookFunctions::showBook(foundBook);
+
+            std::cout << ":> ";
 
             std::string UserInput;
             getline(std::cin, UserInput);
@@ -135,9 +137,9 @@ void Librarian::returnBook(int memberId, int bookId) {
                     time_t current_time = time(0);
                     time_t BookDueDate = member_book.getDueDate();
 
-                    std::cout << "found book " << member_book.getbookName() << " in member books. DueDate: " <<
+                    std::cout << "Found book " << member_book.getbookName() << " in member books. DueDate: " <<
                         ctime(&BookDueDate) << " current Date: " << ctime(&current_time) << std::endl <<
-                        "would you like to pay your Fine? (yes/no) :";
+                        "Would you like to take the fine? (yes/no) :";
 
 //                    member_book.returnBook();
 
@@ -148,7 +150,7 @@ void Librarian::returnBook(int memberId, int bookId) {
                         calcFine(memberId);
                     }
 
-                    std::cout << "Book " << member_book.getbookName() << " has been return." << std::endl;
+                    std::cout << "Book " << member_book.getbookName() << " has been returned." << std::endl;
 
                     return;
                 }
@@ -170,7 +172,7 @@ void Librarian::displayBorrowedBooks(int memberId) {
         if (member.getMemberId() == memberId) {
 
             if(member.getBookBorrowed().size() == 0){
-                std::cout << "User " << member.getName() << " has no book borrowed yet." << std::endl;
+                std::cout << "User " << member.getName() << " has not borrowed any books yet." << std::endl;
                 return;
             }
 
@@ -200,7 +202,7 @@ void Librarian::calcFine(int memberId) {
                     Fine += CalFine;
             }
 
-            std::cout << "calculated fine for user " << member.getName() << " is :" << Fine << std::endl;
+            std::cout << "Calculated fine for user " << member.getName() << " is :" << Fine << std::endl;
 
         }
     }
@@ -211,7 +213,7 @@ void Librarian::calcFine(int memberId) {
     @return staff ID
 */
 int Librarian::getstaffId() {
-    return this->getstaffId();
+    return this->staffId;
 }
 
 /*

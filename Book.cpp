@@ -23,7 +23,7 @@ std::string Book::getbookName(){
 };
 
 std::string Book::getAuthorFirstName(){
-    return this->getAuthorFirstName();
+    return this -> authorFirstName;
 }
 
 std::string Book::getAuthorLastName(){

@@ -63,7 +63,7 @@ TEST_CASE("Member Functions test","[member]"){
 TEST_CASE("Read csv file and Book function", "[book]"){
     BookStruct FoundBook;
 
-    SharedData::FilePath = "/home/soshi/CLionProjects/untitled1/library_books.csv";
+    SharedData::FilePath = "/Users/amir/Desktop/Course Work 1/library_books.csv";
 
     REQUIRE(FindRecord(FoundBook, SharedData::FilePath, "5") == true);
     REQUIRE(FoundBook.bookId == "5");

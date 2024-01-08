@@ -61,7 +61,7 @@ namespace InputValidation {
 
         // If At or Dot is not present
         if (At == -1 || Dot == -1) {
-            std::cout << "wrong email please try again" << std::endl;
+            std::cout << "Wrong email please try again" << std::endl;
             return false;
         }
 
@@ -86,7 +86,7 @@ namespace InputValidation {
 
             // check if its char or not
             if (!isChar(NameChar)) {
-                std::cout << "Invalid Name Please try again" << std::endl;
+                std::cout << "Invalid name please try again" << std::endl;
                 return false;
             }
         }
@@ -193,7 +193,7 @@ namespace BookFunctions {
                           << std::endl;
             } else {
                 SharedData::FilePath = path;
-                std::cout << "File successfully Added to program. " << std::endl;
+                std::cout << "File successfully added to program. " << std::endl;
                 return;
             }
         }
