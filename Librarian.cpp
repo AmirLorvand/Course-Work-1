@@ -1,6 +1,6 @@
 /*
     Librarian.cpp
-    Author: M00872834
+    Author: Amir Lorvand
     Created: 30 Dec 2023
     Updated: 4 Jan 2024
 */
