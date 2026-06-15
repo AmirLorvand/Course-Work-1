@@ -1,0 +1,20 @@
+# macOS system files
+.DS_Store
+
+# JetBrains / CLion / IntelliJ project files
+.idea/
+
+# Build outputs
+*.o
+*.out
+*.exe
+*.dSYM/
+
+# CMake / build folders
+build/
+cmake-build-debug/
+cmake-build-release/
+
+# Temporary files
+*.tmp
+*.log
