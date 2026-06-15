@@ -1,9 +1,18 @@
-
 # Library Management System – C++ OOP Coursework
 
 This project is a console-based **Library Management System** developed in **C++**. It demonstrates object-oriented programming principles such as classes, inheritance, encapsulation, modular design, input validation, file handling, and unit testing.
 
 The system allows a librarian to manage members, issue books, return books, display borrowed books, and calculate overdue fines using book data loaded from a CSV file.
+
+---
+
+## Project Timeline
+
+* **Originally completed:** 2024
+* **Refactored and published on GitHub:** 2026
+* **Context:** Object-Oriented Programming coursework project
+
+This repository has been cleaned and documented for portfolio purposes.
 
 ---
 
@@ -150,6 +159,7 @@ Through this coursework project, I practised:
 * Building a menu-driven console application
 * Writing unit tests with Catch2
 * Using a Makefile to compile a multi-file C++ project
+* Organising a project for public GitHub presentation
 
 ---
 
@@ -157,15 +167,17 @@ Through this coursework project, I practised:
 
 Possible improvements include:
 
-* Replacing hard-coded file paths with relative paths
 * Improving the book return logic so returned books are removed from the member’s borrowed list
 * Storing member data persistently in a file or database
 * Adding a graphical user interface
 * Improving error handling and validation
-* Refactoring the project into separate `src` and `tests` folders
+* Refactoring the project into separate `src`, `include`, and `tests` folders
+* Adding clearer test coverage for all core system operations
 
 ---
 
 ## Author
 
 **Amir Lorvand**
+
+Computer Science graduate with an interest in software development, artificial intelligence, machine learning, and data-driven systems.
