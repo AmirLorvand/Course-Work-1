@@ -3,7 +3,7 @@
 
 /*
     Member.h
-    Author: M00872834
+    Author: Amir Lorvand
     Created: 1 Jan 2024
     Updated: 4 Jan 2024
 */
