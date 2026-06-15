@@ -1,6 +1,6 @@
 /*
     SharedData.cpp
-    Author: M00872834
+    Author: Amir Lorvand
     Created: 2 Jan 2024
     Updated: 4 Jan 2024
 */
