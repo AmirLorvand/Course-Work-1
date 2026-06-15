@@ -31,4 +31,4 @@ Test.o: Test.cpp
 	g++ $(CXXFLAGS) -c Test.cpp
 
 clean:
-	rm *.o main test
+	rm -f *.o main test
